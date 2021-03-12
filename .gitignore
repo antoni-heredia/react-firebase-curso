@@ -102,3 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
+ejemplo-auth-firebase/src/firebase-config.js

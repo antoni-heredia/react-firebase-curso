@@ -1,6 +1,8 @@
 import React from 'react'
-import Inicio from './components/Inicio.jsx'
-import Base from './components/Base.jsx'
+import Usuarios from './components/Usuarios.jsx'
+import Usuario from './components/Usuario.jsx'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   BrowserRouter as Router,
@@ -9,17 +11,24 @@ import {
   Switch
 } from 'react-router-dom'
 function App() {
+
   return (
-   <Router>
-     <Switch>
-       <Route path="/inicio">
-        <Inicio></Inicio>
-       </Route>
-       <Route exact path="/">
-        <Base></Base>
-       </Route>
-     </Switch>
-   </Router>
+    <div className="container">
+
+    <Router>
+      <Link to="/">Inicio</Link>
+
+      <Switch>
+        <Route exact path="/">
+          <Usuarios></Usuarios>
+        </Route>
+        <Route exact path="/usuario/:id">
+          <Usuario></Usuario>
+        </Route>
+      </Switch>
+    </Router>
+
+   </div>
   );
 }
 

@@ -4,10 +4,20 @@ const Formulario = () => {
 
     const [nombre, setNombre] = useState("")
     const [edad, setEdad] = useState("")
-
+    const Validar = (event) =>{
+        event.preventDefault()
+        if(!nombre.trim()){
+            console.log("nombre vacio")
+            return
+        }
+        if(!edad.trim()){
+            console.log("edad vacio")
+            return
+        }
+    }
     return (
         <div className="container mt-5">
-            <form className="form-group">
+            <form onSubmit={Validar} className="form-group">
                 <input
                     placeholder="Nombre"
                     className="form-control mb-3"
